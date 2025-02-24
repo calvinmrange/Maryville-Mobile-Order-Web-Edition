@@ -1,0 +1,30 @@
+.header {
+    height: 60px;
+    background: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .header-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d32f2f; /* Red accent */
+  }
+  .header-icons {
+    display: flex;
+    gap: 15px;
+  }
+  .header-icons button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #d32f2f; /* Red accent */
+    transition: color 0.3s ease;
+  }
+  .header-icons button:hover {
+    color: #b71c1c; /* Darker red on hover */
+  }
