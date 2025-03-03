@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maryville Mobile Order</title>
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #8B0000; /* Dark red background */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    /* Header */
+    header {
+      height: 10%; /* Adjusted height */
+      background: #000; /* Black background */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .header-title {
+      font-size: 1.5vw;
+      font-weight: bold;
+      color: #fff;
+    }
+    .header-title span {
+      color: #8B0000; /* Dark red highlight for "MOBILE ORDER" */
+    }
+    .header-icons {
+      display: flex;
+      gap: 15px;
+    }
+    .header-icons button {
+      background: none;
+      border: none;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Top Panel */
+    .top-panel {
+      height: 10%; /* Adjusted height */
+      background: #8B0000;
+      color: #fff;
+      text-align: center;
+      font-size: 1.2vw;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Start Order Button */
+    .start-order-btn {
+      margin: 10px auto;
+      background: #000;
+      color: #fff;
+      border: 2px solid #fff; /* White border */
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1vw;
+      font-weight: bold;
+      display: block;
+      cursor: pointer;
+      max-width: 200px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .start-order-btn:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+
+    /* Info Section */
+    .info-section {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .info-section h2 {
+      font-size: 1.5vw;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .info-section p {
+      font-size: 1vw;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    /* Recent Orders Section */
+    .recent-orders {
+      margin-top: 10px;
+    }
+    .recent-orders h2 {
+      font-size: 1.5vw;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .recent-orders-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow wrapping to fit within the viewport */
+    }
+    .recent-order-item {
+      flex: 0 0 30%; /* Adjusted width for better fit */
+      padding: 10px;
+      border: 2px solid #fff; /* White border */
+      border-radius: 5px;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      font-weight: normal;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .recent-order-item p {
+      margin: 5px 0;
+      font-size: 0.9vw;
+    }
+
+    /* Bottom Bar */
+    .bottom-bar {
+      height: 10%; /* Adjusted height */
+      background: #000;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .bottom-bar button {
+      background: #8B0000;
+      color: #fff;
+      border: 2px solid #fff; /* White border */
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 0.9vw;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .bottom-bar button:hover {
+      background: #a00;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-title">MARYVILLE <span>MOBILE ORDER</span></div>
+    <div class="header-icons">
+      <button title="Account Settings">⚙️</button>
+      <button title="Notifications">🔔</button>
+      <button title="Order Ratings">⭐</button>
+    </div>
+  </header>
+
+  <!-- Top Panel -->
+  <div class="top-panel">
+    Welcome back! Check out the latest news and suggestions tailored for you.
+  </div>
+
+  <!-- Start Order Button -->
+  <button class="start-order-btn">Start Order</button>
+
+  <!-- Info Section -->
+  <div class="info-section">
+    <h2>News & Suggestions</h2>
+    <p>📢 Don't miss our exclusive deals this week! Get 20% off on your next order.</p>
+    <p>🍕 Try our new handcrafted pizzas from Mozzie's Handcrafted Pizza.</p>
+    <p>☕ Starbucks is now offering a free drink with every 5 purchases!</p>
+    <p>🎁 Invite your friends and earn rewards for every successful referral.</p>
+
+    <!-- Recent Orders -->
+    <div class="recent-orders">
+      <h2>Recent Orders</h2>
+      <div class="recent-orders-container">
+        <div class="recent-order-item">
+          <p><strong>Order from Urban Hen</strong></p>
+          <p>2x Chicken Sandwiches</p>
+          <p><em>Placed on: 2025-02-03</em></p>
+        </div>
+        <div class="recent-order-item">
+          <p><strong>Order from Sushi By Faith</strong></p>
+          <p>3x California Rolls</p>
+          <p><em>Placed on: 2025-02-02</em></p>
+        </div>
+        <div class="recent-order-item">
+          <p><strong>Order from Starbucks</strong></p>
+          <p>1x Caramel Macchiato</p>
+          <p><em>Placed on: 2025-02-01</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <button title="Payment Methods">💳 Payment</button>
+    <button title="Invite Friends">📨 Invite</button>
+    <button title="Apply Promo Code">🎟️ Promo</button>
+    <button title="Support">📞 Support</button>
+  </div>
+</body>
+</html>
