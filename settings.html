@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  <!-- Import the Roboto font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #BE0F2C; /* Dark red background */
+      color: #fff;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* Fixed Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 60px; /* Offset for header */
+      left: 0;
+      width: 200px;
+      height: calc(100vh - 60px);
+      background: #333;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 5px;
+      background: #444;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+    .sidebar a:hover {
+      background: #555;
+    }
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      margin-left: 220px; /* Leave space for the sidebar */
+      margin-top: 60px;   /* Offset for the fixed header */
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .settings-section {
+      background: #1C1C1C;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .settings-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #BE0F2C; /* Accent color */
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+    .settings-section p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    .settings-section .input-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .settings-section input[type="text"] {
+      width: 250px;
+      padding: 8px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+    }
+    .settings-section button {
+      background: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .settings-section button:hover {
+      background: #444;
+    }
+    .support-button {
+      background: #BE0F2C;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+      text-align: center;
+      transition: background 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+    .support-button:hover {
+      background: #A10C23;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed Header -->
+  <div class="header">Settings</div>
+  
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#order-review">Order Review</a>
+    <a href="#promo-code">Promo Code</a>
+    <a href="#friend-invitations">Friend Invitations</a>
+    <a href="#support">Support</a>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Order Review Section -->
+    <div id="order-review" class="settings-section">
+      <h2>Order Review</h2>
+      <p>Review your previous orders and view detailed confirmations.</p>
+      <button onclick="location.href='https://forms.gle/c29VXmQYjkpXgGf2A'">Go to Order Review Form</button>
+    </div>
+    
+    <!-- Promo Code Section -->
+    <div id="promo-code" class="settings-section">
+      <h2>Promo Code Application</h2>
+      <p>Apply a promo code to get discounts on your orders.</p>
+      <div class="input-group">
+        <input type="text" placeholder="Enter promo code">
+        <button>Apply</button>
+      </div>
+    </div>
+    
+    <!-- Friend Invitations Section -->
+    <div id="friend-invitations" class="settings-section">
+      <h2>Friend Invitations</h2>
+      <p>Invite your friends to join MARYVILLE MOBILE ORDER and earn rewards for successful referrals.</p>
+      <button onclick="alert('Invitation link copied!')">Invite Friends</button>
+    </div>
+    
+    <!-- Support Section -->
+    <div id="support" class="settings-section">
+      <h2>Support</h2>
+      <p>Need help? Visit our support form for assistance.</p>
+      <button class="support-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScL2su-bcxdEhdnxsySmgNnw6svXLYBSkEDjMBu1VVJfmrQlQ/viewform?usp=dialog'">
+        Go to Support Form
+      </button>
+    </div>
+  </div>
+</body>
+</html>

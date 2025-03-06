@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maryville Mobile Order</title>
+  <!-- Import a cleaner font: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Global Reset & Base Styles */
     * {
@@ -12,8 +14,8 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #8B0000; /* Dark red background */
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: #BE0F2C; /* Dark red background */
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -36,7 +38,7 @@
       color: #fff;
     }
     .header-title span {
-      color: #8B0000; /* Dark red highlight for "MOBILE ORDER" */
+      color: #BE0F2C; /* Dark red highlight for "MOBILE ORDER" */
     }
     .header-icons {
       display: flex;
@@ -53,7 +55,7 @@
     /* Top Panel */
     .top-panel {
       height: 10%; /* Adjusted height */
-      background: #8B0000;
+      background: #BE0F2C;
       color: #fff;
       text-align: center;
       font-size: 1.2vw;
@@ -147,7 +149,7 @@
       align-items: center;
     }
     .bottom-bar button {
-      background: #8B0000;
+      background: #BE0F2C;
       color: #fff;
       border: 2px solid #fff; /* White border */
       border-radius: 5px;
@@ -160,6 +162,10 @@
     .bottom-bar button:hover {
       background: #a00;
       transform: scale(1.05);
+    }
+    /* Change promo/phone emoji color */
+    .bottom-bar button .emoji {
+      color: #FFD700; /* Set emoji color to gold, for example */
     }
   </style>
 </head>
@@ -217,8 +223,8 @@
   <div class="bottom-bar">
     <button title="Payment Methods">💳 Payment</button>
     <button title="Invite Friends">📨 Invite</button>
-    <button title="Apply Promo Code">🎟️ Promo</button>
-    <button title="Support">📞 Support</button>
+    <button title="Apply Promo Code"><span class="emoji">🎟️</span> Promo</button>
+    <button title="Support"><span class="emoji">📞</span> Support</button>
   </div>
 </body>
 </html>
