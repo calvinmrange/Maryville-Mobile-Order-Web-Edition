@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARYVILLE MOBILE ORDER - Order Page</title>
+  <!-- Import the Roboto font used by the universal theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: #BE0F2C;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      height: 10%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .header-title {
+      font-size: 1.5vw;
+      font-weight: bold;
+      color: #fff;
+    }
+    .header-title span {
+      color: #BE0F2C;
+    }
+    .header-icons {
+      display: flex;
+      gap: 15px;
+    }
+    .header-icons button {
+      background: none;
+      border: none;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: #fff;
+    }
+    .restaurant-list {
+      flex: 1;
+      margin: 10px;
+      padding: 10px;
+      background: #0a0a0a;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-title">MARYVILLE <span>MOBILE ORDER</span></div>
+    <div class="header-icons">
+      <button title="Home" class="home-btn">🏠</button>
+      <button title="Account Settings">⚙️</button>
+      <button title="Notifications">🔔</button>
+      <button title="Order Ratings">⭐</button>
+    </div>
+  </header>
+
+  <!-- Empty Dark Box -->
+  <div class="restaurant-list">
+    <!-- Intentionally left empty -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mozzie's Handcrafted Pizza - Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: #BE0F2C;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      height: 10%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .header-title {
+      font-size: 1.5vw;
+      font-weight: bold;
+      color: #fff;
+    }
+    .header-title span {
+      color: #BE0F2C;
+    }
+    .header-icons button {
+      background: none;
+      border: none;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Menu Container */
+    .menu-container {
+      flex: 1;
+      margin: 10px;
+      padding: 10px;
+      background: #0a0a0a;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      overflow-y: auto;
+    }
+
+    /* Menu Card Styles */
+    .menu-card {
+      background: #1C1C1C;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .menu-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    }
+    .menu-card .item-name {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Back Button */
+    .back-btn {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 8px 15px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      grid-column: span 2;
+      justify-self: center;
+      width: 50%;
+      margin-bottom: 10px;
+    }
+    .back-btn:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-title">MOZZIE'S <span>HANDCRAFTED PIZZA</span></div>
+    <div class="header-icons">
+      <button title="Home" onclick="window.location.href='index.html'">🏠</button>
+    </div>
+  </header>
+
+  <!-- Menu Container -->
+  <div class="menu-container">
+    <!-- Menu Card: Build Your Own Pasta -->
+    <div class="menu-card">
+      <div class="item-name">Build Your Own Pasta</div>
+    </div>
+
+    <!-- Menu Card: Build Your Own Gluten Free Pizza -->
+    <div class="menu-card">
+      <div class="item-name">Build Your Own Gluten Free Pizza</div>
+    </div>
+
+    <!-- Menu Card: Mac & Cheese -->
+    <div class="menu-card">
+      <div class="item-name">Mac & Cheese</div>
+    </div>
+
+    <!-- Menu Card: Build Your Own Pizza -->
+    <div class="menu-card">
+      <div class="item-name">Build Your Own Pizza</div>
+    </div>
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="window.location.href='index.html'">Back to Restaurants</button>
+  </div>
+</body>
+</html>
