@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARYVILLE MOBILE ORDER - Order Page</title>
+    <!-- Import the Roboto font used by the universal theme -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+        background: #be0f2c;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+      }
+      header {
+        height: 10%;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .header-title {
+        font-size: 1.8vw;
+        font-weight: bold;
+        color: #fff;
+      }
+      .header-title span {
+        color: #be0f2c;
+      }
+      .header-icons {
+        display: flex;
+        gap: 15px;
+      }
+      .header-icons button {
+        background: none;
+        border: none;
+        font-size: 1.5vw;
+        cursor: pointer;
+        color: #fff;
+        transition: transform 0.3s ease;
+      }
+      .header-icons button:hover {
+        transform: scale(1.1);
+      }
+      .container {
+        flex: 1;
+        margin: 20px;
+        padding: 20px;
+        background: #0a0a0a;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        overflow-y: auto;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 25px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+      }
+      .category {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .category-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .ingredient-card {
+        background-color: #fff;
+        color: #000;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, background-color 0.3s ease;
+      }
+      .ingredient-card:hover {
+        transform: scale(1.05);
+        background-color: #be0f2c;
+        color: #fff;
+      }
+      .ingredient-card label {
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .ingredient-card input[type="checkbox"] {
+        transform: scale(1.5);
+        cursor: pointer;
+      }
+      .ingredient-card input[type="checkbox"]:checked {
+        background-color: #be0f2c;
+        border-color: #fff;
+      }
+      .confirm-button {
+        background-color: #4caf50;
+        color: #fff;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: none;
+        align-self: center;
+        transition: background-color 0.3s ease;
+      }
+      .confirm-button:hover {
+        background-color: #45a049;
+      }
+
+      /* Slide-out Tab */
+      .slide-out-tab {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #333;
+        color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 100;
+      }
+      .slide-out-tab.open {
+        right: 0;
+      }
+      .slide-out-tab .order-summary {
+        font-size: 1.2rem;
+      }
+      .slide-out-tab .order-summary p {
+        margin-bottom: 10px;
+      }
+      .place-order-button {
+        background-color: #be0f2c;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        text-align: center;
+      }
+      .place-order-button:hover {
+        background-color: #9e0f24;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-title {
+          font-size: 3.5vw;
+        }
+        .header-icons button {
+          font-size: 2vw;
+        }
+        .container {
+          margin: 10px;
+          padding: 15px;
+        }
+        .category-title {
+          font-size: 1.2rem;
+        }
+        .ingredient-card label {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-title">MARYVILLE <span>MOBILE ORDER</span></div>
+      <div class="header-icons">
+        <button title="Home" class="home-btn">🏠</button>
+        <button title="Account Settings">⚙️</button>
+        <button title="Notifications">🔔</button>
+        <button title="Order Ratings">⭐</button>
+      </div>
+    </header>
+
+    <!-- Container for customization options -->
+    <div class="container">
+      <div class="title">Build Your Own Pasta</div>
+
+      <!-- Portion Size -->
+      <div class="category">
+        <div class="category-title">Portion Size</div>
+        <div class="ingredient-card">
+          <label for="small">Small</label>
+          <input
+            type="checkbox"
+            id="portion-small"
+            name="portion"
+            value="Small"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="large">Large</label>
+          <input
+            type="checkbox"
+            id="portion-large"
+            name="portion"
+            value="Large"
+          />
+        </div>
+      </div>
+
+      <!-- Sauce -->
+      <div class="category">
+        <div class="category-title">Sauce</div>
+        <div class="ingredient-card">
+          <label for="no_sauce">No Sauce</label>
+          <input
+            type="checkbox"
+            id="sauce-no_sauce"
+            name="sauce"
+            value="No Sauce"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="pesto">Pesto</label>
+          <input type="checkbox" id="sauce-pesto" name="sauce" value="Pesto" />
+        </div>
+        <div class="ingredient-card">
+          <label for="alfredo">Alfredo Sauce</label>
+          <input
+            type="checkbox"
+            id="sauce-alfredo"
+            name="sauce"
+            value="Alfredo Sauce"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="red_sauce">Red Sauce</label>
+          <input
+            type="checkbox"
+            id="sauce-red_sauce"
+            name="sauce"
+            value="Red Sauce"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="rose_sauce">Rose Sauce</label>
+          <input
+            type="checkbox"
+            id="sauce-rose_sauce"
+            name="sauce"
+            value="Rose Sauce"
+          />
+        </div>
+      </div>
+
+      <!-- Toppings -->
+      <div class="category">
+        <div class="category-title">Toppings</div>
+        <div class="ingredient-card">
+          <label for="grilled_chicken">Grilled Chicken</label>
+          <input
+            type="checkbox"
+            id="topping-grilled_chicken"
+            name="topping"
+            value="Grilled Chicken"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="mushrooms">Mushrooms</label>
+          <input
+            type="checkbox"
+            id="topping-mushrooms"
+            name="topping"
+            value="Mushrooms"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="spinach">Spinach</label>
+          <input
+            type="checkbox"
+            id="topping-spinach"
+            name="topping"
+            value="Spinach"
+          />
+        </div>
+        <div class="ingredient-card">
+          <label for="extra_cheese">Extra Cheese</label>
+          <input
+            type="checkbox"
+            id="topping-extra_cheese"
+            name="topping"
+            value="Extra Cheese"
+          />
+        </div>
+      </div>
+
+      <!-- Confirm Button -->
+      <button class="confirm-button" id="confirm-button">Confirm</button>
+    </div>
+
+    <!-- Slide-out Tab -->
+    <div class="slide-out-tab" id="order-summary">
+      <h2>Order Summary</h2>
+      <div class="order-summary">
+        <p><strong>Build Your Own Pasta:</strong></p>
+        <p>Portion Size: <span id="portion-size-summary">N/A</span></p>
+        <p>Sauce: <span id="sauce-summary">N/A</span></p>
+        <p>Toppings: <span id="toppings-summary">None</span></p>
+      </div>
+      <button class="place-order-button" id="place-order">Place Order</button>
+    </div>
+
+    <script>
+      // Variables for elements
+      const portionCheckboxes = document.querySelectorAll(
+        'input[name="portion"]'
+      );
+      const sauceCheckboxes = document.querySelectorAll('input[name="sauce"]');
+      const toppingCheckboxes = document.querySelectorAll(
+        'input[name="topping"]'
+      );
+      const confirmButton = document.getElementById("confirm-button");
+      const slideOutTab = document.getElementById("order-summary");
+      const portionSizeSummary = document.getElementById(
+        "portion-size-summary"
+      );
+      const sauceSummary = document.getElementById("sauce-summary");
+      const toppingsSummary = document.getElementById("toppings-summary");
+
+      // Handle checkbox changes and update order summary
+      portionCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateOrderSummary);
+      });
+      sauceCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateOrderSummary);
+      });
+      toppingCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateOrderSummary);
+      });
+
+      function updateOrderSummary() {
+        let portionSize = "N/A";
+        let sauces = [];
+        let toppings = [];
+
+        // Get selected portion size
+        portionCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            portionSize = checkbox.value;
+          }
+        });
+
+        // Get selected sauces
+        sauceCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            sauces.push(checkbox.value);
+          }
+        });
+
+        // Get selected toppings
+        toppingCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            toppings.push(checkbox.value);
+          }
+        });
+
+        // Update the order summary
+        portionSizeSummary.textContent = portionSize;
+        sauceSummary.textContent = sauces.join(", ") || "N/A";
+        toppingsSummary.textContent = toppings.join(", ") || "None";
+
+        // Show the confirm button if something is selected
+        if (portionSize !== "N/A" || sauces.length > 0 || toppings.length > 0) {
+          confirmButton.style.display = "block";
+        } else {
+          confirmButton.style.display = "none";
+        }
+      }
+
+      // Handle placing the order
+      const placeOrderButton = document.getElementById("place-order");
+      placeOrderButton.addEventListener("click", placeOrder);
+
+      function placeOrder() {
+        const restaurantId = 1;
+        const menuitemid = 16;
+        let portionSize = portionSizeSummary.textContent;
+        let sauces = sauceSummary.textContent;
+        let toppings = toppingsSummary.textContent;
+
+        if (portionSize === "N/A" && sauces === "N/A" && toppings === "None") {
+          alert("At least one menu item must be selected.");
+          return; // Stop execution if no menu item is selected
+        }
+        if (toppings === "None") {
+          toppings = [];
+        } else {
+          toppings = [toppings];
+        }
+        const orderDetails = {
+          restaurant_id: restaurantId,
+          ingredients: {
+            portion_size: portionSize,
+            sauce: sauces,
+            toppings: toppings,
+          },
+        };
+
+        fetch("http://127.0.0.1:5000/pastaorder", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderDetails),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.error) {
+              alert("Error: " + data.error);
+            } else {
+              alert("Order placed successfully!");
+              // Optionally clear selections after placing order
+              portionCheckboxes.forEach(
+                (checkbox) => (checkbox.checked = false)
+              );
+              sauceCheckboxes.forEach((checkbox) => (checkbox.checked = false));
+              toppingCheckboxes.forEach(
+                (checkbox) => (checkbox.checked = false)
+              );
+              updateOrderSummary();
+              slideOutTab.classList.remove("open");
+            }
+          })
+          .catch((error) => {
+            console.error("Error placing order:", error);
+          });
+      }
+
+      // Toggle the slide-out tab
+      confirmButton.addEventListener("click", () => {
+        slideOutTab.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
