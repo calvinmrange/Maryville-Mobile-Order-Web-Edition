@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARYVILLE MOBILE ORDER - Recent Orders</title>
+  <!-- Import the Roboto font used by the universal theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: #BE0F2C; /* Dark red background */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      height: 10%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header-title {
+      font-size: 1.8vw;
+      font-weight: bold;
+      color: #fff;
+    }
+    .header-title span {
+      color: #BE0F2C;
+    }
+    .header-icons {
+      display: flex;
+      gap: 15px;
+    }
+    .header-icons button {
+      background: none;
+      border: none;
+      font-size: 1.5vw;
+      cursor: pointer;
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
+    .header-icons button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Container for Recent Orders */
+    .container {
+      flex: 1;
+      margin: 20px;
+      padding: 20px;
+      background: #0a0a0a;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 10px;
+    }
+
+    /* Recent Order Card */
+    .order-card {
+      background-color: #1C1C1C;
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+    .order-card:hover {
+      transform: scale(1.05);
+      background-color: #BE0F2C;
+    }
+    .order-card p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .order-card .order-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .order-card .order-details {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Back Button */
+    .back-btn {
+      background-color: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      align-self: center;
+      transition: background-color 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #333;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-title {
+        font-size: 3.5vw;
+      }
+      .header-icons button {
+        font-size: 2vw;
+      }
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+      .title {
+        font-size: 1.5rem;
+      }
+      .order-card {
+        padding: 15px;
+      }
+      .order-card p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-title">MARYVILLE <span>MOBILE ORDER</span></div>
+    <div class="header-icons">
+      <button title="Home" onclick="window.location.href='home.html'">🏠</button>
+      <button title="Account Settings">⚙️</button>
+      <button title="Notifications">🔔</button>
+    </div>
+  </header>
+
+  <!-- Container for Recent Orders -->
+  <div class="container">
+    <div class="title">Recent Orders</div>
+
+    <!-- Order Card 1 -->
+    <div class="order-card">
+      <p class="order-title">Order from Mozzie's Handcrafted Pizza</p>
+      <p class="order-details">1x Pepperoni Pizza</p>
+      <p class="order-details"><em>Placed on: 2025-02-03</em></p>
+    </div>
+
+    <!-- Order Card 2 -->
+    <div class="order-card">
+      <p class="order-title">Order from Sushi By Faith</p>
+      <p class="order-details">3x California Rolls</p>
+      <p class="order-details"><em>Placed on: 2025-02-02</em></p>
+    </div>
+
+    <!-- Order Card 3 -->
+    <div class="order-card">
+      <p class="order-title">Order from Starbucks</p>
+      <p class="order-details">1x Caramel Macchiato</p>
+      <p class="order-details"><em>Placed on: 2025-02-01</em></p>
+    </div>
+
+    <!-- Add more order cards as needed -->
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="window.location.href='home.html'">Back to Home</button>
+</body>
+</html>
+
+  

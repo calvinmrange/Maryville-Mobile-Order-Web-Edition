@@ -86,6 +86,27 @@
       transform: scale(1.05);
     }
 
+    /*Recent Order Button */
+    .recent-order-btn {
+      margin: 20px auto;
+      background: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: block;
+      text-align: center; 
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .recent-order-btn:hover {
+      background: #333;
+      transform: scale(1.05)
+    }
+
+
     /* Info Section */
     .info-section {
       flex: 1;
@@ -198,7 +219,10 @@
 
     <!-- Recent Orders -->
     <div class="recent-orders">
-      <h2>Recent Orders</h2>
+      <!-- Recent Orders Button Replace Header -->
+      <button class ="recent-order-btn" onclick ="window.location.href='recent_orders.html'">
+        View All Recent Orders
+      </button>
       <div class="recent-orders-container">
         <div class="recent-order-item">
           <p><strong>Order from Urban Hen</strong></p>
